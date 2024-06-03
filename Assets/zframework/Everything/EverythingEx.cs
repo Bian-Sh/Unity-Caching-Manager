@@ -28,7 +28,7 @@ public class Everything : IDisposable
 
     public Everything()
     {
-        //ĞèÒªÔÚÖ÷Ïß³Ìµ÷ÓÃ
+        //éœ€è¦åœ¨ä¸»çº¿ç¨‹è°ƒç”¨
         if (Thread.CurrentThread.ManagedThreadId != 1)
         {
             throw new Exception("Everything must be created in the main thread");
@@ -37,12 +37,12 @@ public class Everything : IDisposable
         isCustomProcess = false;
     }
 
-    // ¿ªÆô Everything ËÑË÷ÒıÇæ£º
-    // 1. ²éÕÒ Process£¬Èç¹û´æÔÚ£¬±ê¼ÇÎª Custom ·ñÔò Self
-    // 2. ²éÑ¯ Version ²¢³ö·¢ OnVersionQuery ÊÂ¼ş
-    // 3. ²éÑ¯ÊÇ·ñÒÑ¾­¼ÓÔØÊı¾İ¿â£¬Èç¹ûÃ»ÓĞ£¬Òì²½µÈ´ı¼ÓÔØÍê³É
-    // 4. Êı¾İ¿â¼ÓÔØÍê³Éºó£¬´¥·¢ OnDatabaseLoaded ÊÂ¼ş
-    // 5. ËùÓĞ¶¯×÷ÎŞÒì³££¬·µ»Ø true£¬·ñÔò·µ»Ø false
+    // å¼€å¯ Everything æœç´¢å¼•æ“ï¼š
+    // 1. æŸ¥æ‰¾ Processï¼Œå¦‚æœå­˜åœ¨ï¼Œæ ‡è®°ä¸º Custom å¦åˆ™ Self
+    // 2. æŸ¥è¯¢ Version å¹¶å‡ºå‘ OnVersionQuery äº‹ä»¶
+    // 3. æŸ¥è¯¢æ˜¯å¦å·²ç»åŠ è½½æ•°æ®åº“ï¼Œå¦‚æœæ²¡æœ‰ï¼Œå¼‚æ­¥ç­‰å¾…åŠ è½½å®Œæˆ
+    // 4. æ•°æ®åº“åŠ è½½å®Œæˆåï¼Œè§¦å‘ OnDatabaseLoaded äº‹ä»¶
+    // 5. æ‰€æœ‰åŠ¨ä½œæ— å¼‚å¸¸ï¼Œè¿”å› trueï¼Œå¦åˆ™è¿”å› false
     public async Task<bool> StartSearchEngineAsync()
     {
         try
@@ -142,7 +142,7 @@ public class Everything : IDisposable
         Everything_GetResultDateModified(item.index, out var fileTime);
         item.lastModified = DateTime.FromFileTime(fileTime);
         // Check if Library folder is required to be deleted
-        // Èç¹ûÏîÄ¿ÔÚ°×Ãûµ¥ÖĞ£¬Ôò²»ĞèÒªÉ¾³ı Library ÎÄ¼ş¼Ğ
+        // å¦‚æœé¡¹ç›®åœ¨ç™½åå•ä¸­ï¼Œåˆ™ä¸éœ€è¦åˆ é™¤ Library æ–‡ä»¶å¤¹
         item.isLibraryDeleteRequired = !GameManager.IsProjectInWhiteList(item.path);
     }
 
@@ -165,7 +165,7 @@ public class Everything : IDisposable
     // if is opened by this class, will close it when dispose,otherwise will not close it
     Process process;
     SynchronizationContext context;
-    bool isCustomProcess;// Everything ÊÇÓÃ»§¿ªÆôµÄ£¿
+    bool isCustomProcess;// Everything æ˜¯ç”¨æˆ·å¼€å¯çš„ï¼Ÿ
 }
 
 [Serializable]

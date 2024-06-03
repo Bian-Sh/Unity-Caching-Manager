@@ -23,11 +23,11 @@ public class ProgressPanel : MonoBehaviour, IBlockable
         });
     }
 
-    // content ÊÇÂ·¾¶
-    // porgress ÊÇ½ø¶È£¬ĞÎÈç£º 15/200 £¬±íÊ¾ÕıÔÚ´¦ÀíµÚ 15 ¸öÎÄ¼ş£¬¹² 200 ¸öÎÄ¼ş
+    // content æ˜¯è·¯å¾„
+    // porgress æ˜¯è¿›åº¦ï¼Œå½¢å¦‚ï¼š 15/200 ï¼Œè¡¨ç¤ºæ­£åœ¨å¤„ç†ç¬¬ 15 ä¸ªæ–‡ä»¶ï¼Œå…± 200 ä¸ªæ–‡ä»¶
     public async Task ShowAsync(string  content, string progress) 
     {
-        title.text = "ÕıÔÚ´¦Àí";
+        title.text = "æ­£åœ¨å¤„ç†";
         description.text = content;
         this.progress.text = progress;
         transform.localScale = Vector3.one * 0.1f;

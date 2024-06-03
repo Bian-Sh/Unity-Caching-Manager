@@ -31,12 +31,12 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// ÅÅ³ıÏîÄ¿¶ø±ÜÃâ Library ±»É¾³ı
+    /// æ’é™¤é¡¹ç›®è€Œé¿å… Library è¢«åˆ é™¤
     /// </summary>
     public static List<string> ProjectWhiteList = new List<string>();
     public static List<string> ProjectHandled = new List<string>();
     /// <summary>
-    ///  Library ÎÄ¼ş¼ĞÖĞĞèÒª±£ÁôµÄÎÄ¼ş
+    ///  Library æ–‡ä»¶å¤¹ä¸­éœ€è¦ä¿ç•™çš„æ–‡ä»¶
     /// </summary>
     public static string[] FilesWhiteList = new string[]
     {
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     };
 
     /// <summary>
-    ///  Everything ËÑË÷ÒıÇæµÄËÑË÷
+    ///  Everything æœç´¢å¼•æ“çš„æœç´¢
     /// </summary>
     public static string searchPattern = "Library child:EditorUserBuildSettings.asset|LastSceneManagerSetup.txt";
 
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        SaveWhiteList(); //µ±ÇÒ½öµ±³ÌĞòÍË³öÊ±±£´æ°×Ãûµ¥
+        SaveWhiteList(); //å½“ä¸”ä»…å½“ç¨‹åºé€€å‡ºæ—¶ä¿å­˜ç™½åå•
         SaveHandledProject();
     }
 

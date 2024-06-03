@@ -12,9 +12,9 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
 {
     public ReusableScrollViewController controller;
     public List<ProjectInfo> datas;
-    public Button loadProjects; // Ê¹ÓÃ Everything ËÑË÷ÏîÄ¿
+    public Button loadProjects; // ä½¿ç”¨ Everything æœç´¢é¡¹ç›®
     public Button deleteLibrary;
-    public Button reloadDatabase; //ÖØĞÂ¼ÓÔØ Everything Êı¾İ¿â
+    public Button reloadDatabase; //é‡æ–°åŠ è½½ Everything æ•°æ®åº“
     public Button selectAll;
     public Button invertSelect;
     Everything everything;
@@ -103,7 +103,7 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
         canvasGroup.blocksRaycasts = false;
         var result = await everything.UpdateAllFolderIndexesAsync();
         canvasGroup.blocksRaycasts = true;
-        //TODO: µ¯´°ÌáÊ¾ÖØĞÂ¼ÓÔØÊı¾İ¿â³É¹¦
+        //TODO: å¼¹çª—æç¤ºé‡æ–°åŠ è½½æ•°æ®åº“æˆåŠŸ
         if (result)
         {
             Debug.Log("Reload Database Success");
@@ -123,9 +123,9 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
     }
     public async void OnDeleteLibraryAsync()
     {
-        // ÓÃ»§È·ÈÏÉ¾³ı
+        // ç”¨æˆ·ç¡®è®¤åˆ é™¤
         var result = await notification.ShowAsync("Delete Library", "Are you sure to delete the Library folder of the selected project?");
-        if (result == 0) //È·ÈÏ
+        if (result == 0) //ç¡®è®¤
         {
             _ = progressPanel.ShowAsync("", "");
 
@@ -146,7 +146,7 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
             await progressPanel.HideAsync();
             LoadScrollData(false);
         }
-        else if (result == 1) //È¡Ïû
+        else if (result == 1) //å–æ¶ˆ
         {
             Debug.Log("Cancel Delete Library");
         }
@@ -180,13 +180,13 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
         action(data.path);
     }
 
-    //É¾³ı Library ÎÄ¼ş¼Ğ
+    //åˆ é™¤ Library æ–‡ä»¶å¤¹
     private void OnProjectLibraryDelete(ProjectInfo data, bool refreshData)
     {
         if (data != null && data.isLibraryDeleteRequired)
         {
             var libraryPath = Path.Combine(data.path, "Library");
-            //É¾³ı³ıÁË GameManager.FilesWhiteList  Ö®ÍâµÄËùÓĞÎÄ¼ş¼°ÎÄ¼ş¼Ğ
+            //åˆ é™¤é™¤äº† GameManager.FilesWhiteList  ä¹‹å¤–çš„æ‰€æœ‰æ–‡ä»¶åŠæ–‡ä»¶å¤¹
             var temp = Path.Combine(data.path, "Library_Temp");
             if (!Directory.Exists(temp))
             {

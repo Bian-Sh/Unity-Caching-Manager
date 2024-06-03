@@ -1,0 +1,4 @@
+﻿E:\Unity\Github\MoveEffectTool
+E:\Unity\Mine\Assemblies-Hotfix-Toolkit
+E:\Unity\Mine\Dotween-Animation-Provider
+E:\Unity\Mine\Loom

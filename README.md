@@ -25,3 +25,12 @@
 ## 预览
 
 ![](./doc/Preview.gif)
+
+![](doc/Processing.png)
+
+|              | WizTree                   |
+| ------------ |:-------------------------:|
+| Before:278GB | ![](doc/Before-final.png) |
+| After:208GB  | ![](doc/After-final.png)  |
+
+PS: 删除结果使用 WizeTree 监控，红色方块代表删除；请注意图片有二次创作，完整的 WizeTree 界面不长这样。

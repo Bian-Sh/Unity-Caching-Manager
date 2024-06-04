@@ -1661,7 +1661,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!222 &7950371124001606106
 CanvasRenderer:
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7950371123727352536}
   m_HandleRect: {fileID: 7950371123727352535}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1787,10 +1787,10 @@ RectTransform:
   m_Father: {fileID: 7950371124630451949}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -108.936066, y: -2.243}
-  m_SizeDelta: {x: 785.9355, y: 467.2988}
+  m_AnchorMin: {x: 0.08246739, y: 0.043548003}
+  m_AnchorMax: {x: 0.73742044, y: 0.9437727}
+  m_AnchoredPosition: {x: -0.04156494, y: 1.0646362}
+  m_SizeDelta: {x: -5.4328947, y: -0.9636154}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7950371124033697416
 CanvasRenderer:
@@ -2412,6 +2412,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 0}
   isPopUpStyle: 0
   controller: {fileID: 7950371124033697413}
+  datas: []
   loadProjects: {fileID: 7950371124244494924}
   deleteLibrary: {fileID: 7950371124037708637}
   reloadDatabase: {fileID: 7950371125150566030}

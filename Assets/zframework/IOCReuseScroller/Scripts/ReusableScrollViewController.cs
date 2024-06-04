@@ -37,7 +37,7 @@ namespace zFrame.UI
             {
                 scrollPosition = value;
                 scrollRect.normalizedPosition = scrollPosition;
-    //            scrollRect.onValueChanged.Invoke(scrollPosition);
+                scrollRect.onValueChanged.Invoke(scrollPosition);
             }
         }
         private LinkedList<BaseCell> cells = new LinkedList<BaseCell>();

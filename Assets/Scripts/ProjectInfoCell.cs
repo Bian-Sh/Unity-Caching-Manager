@@ -25,7 +25,7 @@ public class ProjectInfoCell : BaseCell
         projectInfo = info;
         projectname.text = info.projectName;
         projectpath.text = info.path;
-        lastModified.text = info.lastModified.ToString("f");
+        lastModified.text = $"最后修改：{info.lastModified:yyyy-MM-dd}";
         libraryDeleteRequire.SetIsOnWithoutNotify(info.isLibraryDeleteRequired);
     }
 }

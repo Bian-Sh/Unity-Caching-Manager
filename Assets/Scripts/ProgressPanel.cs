@@ -25,11 +25,12 @@ public class ProgressPanel : MonoBehaviour, IBlockable
 
     // content 是路径
     // porgress 是进度，形如： 15/200 ，表示正在处理第 15 个文件，共 200 个文件
-    public async Task ShowAsync(string  content, string progress) 
+    public async Task ShowAsync()
     {
+        IsCanceled = false;
         title.text = "正在处理";
-        description.text = content;
-        this.progress.text = progress;
+        description.text = "";
+        this.progress.text = "";
         transform.localScale = Vector3.one * 0.1f;
         gameObject.SetActive(true);
         await this.BlockAsync(Color.black, 0.8f, 0.3f, 0.1f);
@@ -48,9 +49,9 @@ public class ProgressPanel : MonoBehaviour, IBlockable
         // do nothing
     }
 
-    internal void UpdateProgress(string path, string v)
+    internal void UpdateProgress(string path, string progress)
     {
         description.text = path;
-        progress.text = v;
+        this.progress.text = progress;
     }
 }

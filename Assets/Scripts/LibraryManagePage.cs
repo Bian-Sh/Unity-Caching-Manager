@@ -127,8 +127,9 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
         var result = await notification.ShowAsync("Delete Library", "Are you sure to delete the Library folder of the selected project?");
         if (result == 0) //确认
         {
-            _ = progressPanel.ShowAsync("", "");
-
+            _ = progressPanel.ShowAsync();
+            var count = datas.Count;
+            var current = 0;
             for (int i = 0; i < datas.Count; i++)
             {
                 var data = datas[i];
@@ -138,9 +139,13 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
                     {
                         break;
                     }
-                    progressPanel.UpdateProgress(data.path, $"{i + 1}/{datas.Count}");
+                    current++;
+                    progressPanel.UpdateProgress(data.path, $"{current}/{count}");
                     await Task.Run(() => OnProjectLibraryDelete(data, false));
+                    await Task.Delay(300); // 模拟删除延迟，切记之后删除
                     AddProjectToHandledList(data.path);
+                    datas.RemoveAt(i);
+                    i--;
                 }
             }
             await progressPanel.HideAsync();
@@ -185,6 +190,8 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
     {
         if (data != null && data.isLibraryDeleteRequired)
         {
+            Debug.Log($"{nameof(LibraryManagePage)}: 用户删除了{data}");
+#if false
             var libraryPath = Path.Combine(data.path, "Library");
             //删除除了 GameManager.FilesWhiteList  之外的所有文件及文件夹
             var temp = Path.Combine(data.path, "Library_Temp");
@@ -202,10 +209,11 @@ public class LibraryManagePage : BasePage, IReusableScrollViewDataSource
             }
             Directory.Delete(libraryPath, true);
             Directory.Move(temp, libraryPath);
+#endif
             // update datas
-            datas.Remove(data);
             if (refreshData)
             {
+                datas.Remove(data);
                 LoadScrollData();
             }
         }
